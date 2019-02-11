@@ -2,14 +2,15 @@
 
 DevOps Meetup Würzburg, 2019-02-12
 
-By Stefan Siegl, aka Rolf.  Twitter: https://twitter.com/stesie23
+By Stefan Siegl, aka Rolf.  
+Twitter: https://twitter.com/stesie23  
 Developer at [Mayflower](https://mayflower.de/).
 
 Got questions?  E-Mail: rolf@mayflower.de
 
 # Kubernetes Workshop
 
-* Kubernetes is a Container Orchestrator
+Kubernetes is a Container Orchestrator
 
 * Docker = single container
 * docker-compose = multiple containers
@@ -26,13 +27,13 @@ For today we don't care about Kubernetes on Rkt or Firecracker...
 * Install *minikube* and *kubectl*, see https://kubernetes.io/docs/tasks/tools/install-minikube/#install-kubectl
 
 ```
-$ minikube start --cpus 4 --memory 8192
+$ minikube start --memory 8192
 ... keep waiting ...
 $ kubectl config current-context
 minikube
 ```
 
-after installation pod list should look like this:
+after installation the pod list should look like this:
 
 ```
 $ kubectl -n kube-system get pods
@@ -43,6 +44,9 @@ kube-proxy-tqrmc                       1/1       Running   0          36s
 kubernetes-dashboard-ccc79bfc9-q5866   1/1       Running   0          33s
 storage-provisioner                    1/1       Running   0          33s
 ```
+
+Kubernetes also has a dashboard, just run `minikube dashboard` to launch the
+necessary proxy and call your browser.  Do it once, and never go there ever after :)
 
 # Kubernetes Basics
 
@@ -513,6 +517,9 @@ $ curl -HHost:somesvc.minikube http://192.168.99.100:31709/
 Request counter: 3.  This request was served to you by somesvc-v1-7b878f7cdf-bmbrb :-)
 das hier ist Version 1 :-)
 ```
+
+With plain Kubernetes you'll always get this round robin thing.  For more fine-grained
+routing use a Service Mesh like Istio.
 
 # Stuff Ignored Today
 
