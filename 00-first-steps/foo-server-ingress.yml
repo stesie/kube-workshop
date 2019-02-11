@@ -1,0 +1,8 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hello-minikube-vhost
+spec:
+  backend:
+    serviceName: foo-server-svc
+    servicePort: 80

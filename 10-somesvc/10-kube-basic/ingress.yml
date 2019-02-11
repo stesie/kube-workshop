@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: somesvc-ingress
+spec:
+  rules:
+  - host: somesvc.minikube
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: somesvc
+          servicePort: 80

@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: foo-server-svc
+spec:
+  selector:
+    foo: web-server
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
