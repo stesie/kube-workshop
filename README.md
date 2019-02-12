@@ -521,6 +521,31 @@ das hier ist Version 1 :-)
 With plain Kubernetes you'll always get this round robin thing.  For more fine-grained
 routing use a Service Mesh like Istio.
 
+## Rollout/Rollback
+
+Deployments support in-place, rolling updates.  Therefore let's first undeploy the
+existing two deployments.
+
+```
+$ kubectl delete deployment/somesvc-v1
+deployment.extensions "somesvc-v1" deleted
+
+$ kubectl delete deployment/somesvc-v2
+deployment.extensions "somesvc-v2" deleted
+```
+
+... cURL'ing should result in *Service Unavailable* responses.
+
+Now run `kubectl apply -f 10-somesvc/20-rolling-update/deployment-somesvc-v1.yml` to deploy
+the first version as `deployment/somesvc`.
+
+Then run `kubectl apply -f 10-somesvc/20-rolling-update/deployment-somesvc-v2.yml` to update
+the existing deployment resource with settings from second version.
+
+Keep cURL'ing in parallel and see how the traffic gradually shifts to the new versions.
+
+Use `kubectl rollout undo deployment/somesvc` to undo the deployment.
+
 # Stuff Ignored Today
 
 * Resource Limits
