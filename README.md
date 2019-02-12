@@ -24,7 +24,7 @@ For today we don't care about Kubernetes on Rkt or Firecracker...
 
 ## Minikube
 
-* Install *minikube* and *kubectl*, see https://kubernetes.io/docs/tasks/tools/install-minikube/#install-kubectl
+* Install *minikube* and *kubectl*, see https://kubernetes.io/docs/tasks/tools/install-minikube/
 
 ```
 $ minikube start --memory 8192
