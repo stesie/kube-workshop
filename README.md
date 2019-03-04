@@ -64,7 +64,7 @@ For the moment let's keep it stateless :-)
 ## Concepts
 
 * everything is a resource
-* resource types: pods, replica set, controller, service, ingress ...
+* resource types: pods, replica set, deployment, service, ingress ...
 * ... even custom resource definitions (CRDs), out of scope for today
 * declared as yaml
 * controllers constantly compare declared state with actual state -> apply changes as needed
@@ -413,7 +413,7 @@ care to recreate it for us.  (like moving it to a different node, if resources g
 
 But we don't really want to use Replica Sets either, since ...
 
-## Controller
+## Deployment
 
 * manages replica sets
 * ... think of "update strategy for replica set"
