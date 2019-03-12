@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: somesvc
+spec:
+  selector:
+    matchLabels:
+      app: somesvc
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: somesvc
+    spec:
+      containers:
+      - name: somesvc
+        image: stesie/somesvc:v1
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 3000
+        env:
+        - name: EXTRA_MESSAGE
+          value: und das hier ist v2!
+

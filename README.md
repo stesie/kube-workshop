@@ -1,6 +1,6 @@
 # Kubernetes 101 Meetup
 
-DevOps Meetup Würzburg, 2019-02-12
+Kubernetes Meetup Nuremberg, 2019-03-13
 
 By Stefan Siegl, aka Rolf.  
 Twitter: https://twitter.com/stesie23  
@@ -52,7 +52,7 @@ necessary proxy and call your browser.  Do it once, and never go there ever afte
 
 ## Architecture
 
-![Kubernetes Overview](./assets/architecture.png)
+![Kubernetes Overview](./intro/assets/architecture.png)
 Source: https://de.wikipedia.org/wiki/Kubernetes#/media/File:Kubernetes.png; CC-BY-SA 4.0
 
 Plugin concept, to support multiple software defined networks (and different cloud providers).

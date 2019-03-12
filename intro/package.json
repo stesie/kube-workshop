@@ -1,0 +1,16 @@
+{
+  "name": "kube-workshop-intro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "reveal-md talk.md --theme white --highlight-theme solarized-light",
+    "export": "rm -rf _static/* && reveal-md talk.md --theme css/custom.css --highlight-theme solarized-light --static _static/ && cp -R _assets/*.css _static/css/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stefan Siegl <stesie@brokenpipe.de>",
+  "license": "MIT",
+  "dependencies": {
+    "reveal-md": "^2.4.0"
+  }
+}
