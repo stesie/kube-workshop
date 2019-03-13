@@ -86,14 +86,14 @@ For the moment let's keep it stateless :-)
 
 (word of caution: you don't usually do that)
 
-The (evil) Imperative Way ...
+Taking Shortcuts ...
 
 ```
 $ kubectl run my-first-pod --image=nginx --labels=env=test,foo=web-server --restart=Never
 ```
 
 ... the `--restart=Never` is needed because kubectl is to intelligent.  It defaults to `Always`
-and hence would create a deployment.  Ignore for the moment :-)
+and hence would create a deployment.  Ignore that for the moment :-)
 
 ```
 $ kubectl get pods
