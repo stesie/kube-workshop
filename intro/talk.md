@@ -21,10 +21,6 @@ Stefan Siegl (@stesie23, <rolf@mayflower.de>)
 
 <!--s-->
 
-![Save Your Internet in Nuremberg, 2019-03-16 13:30](assets/syi_nuremberg.jpg)
-
-<!--s-->
-
 # Agenda
 
 * Start Minikube

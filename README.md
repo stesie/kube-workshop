@@ -1,6 +1,6 @@
 # Kubernetes 101 Meetup
 
-Kubernetes Meetup Nuremberg, 2019-03-13
+DevOps-Meetup XXL zur WueWW, Würzburg, 2019-04-03
 
 By Stefan Siegl, aka Rolf.  
 Twitter: https://twitter.com/stesie23  
@@ -333,36 +333,44 @@ stable/traefik	1.52.6       	1.7.4      	A Traefik based Kubernetes ingress cont
 ### Install a package
 
 ```
-$ helm install stable/traefik --set rbac.enabled=true
-NAME:   tan-warthog
-LAST DEPLOYED: Mon Feb 11 22:22:45 2019
+$ helm install stable/traefik --set rbac.enabled=true --name my-traefik
+NAME:   my-traefik
+LAST DEPLOYED: Tue Apr  2 20:48:13 2019
 NAMESPACE: default
 STATUS: DEPLOYED
 
 RESOURCES:
+==> v1/Pod(related)
+NAME                         READY  STATUS             RESTARTS  AGE
+my-traefik-5fcb694854-n7gpf  0/1    ContainerCreating  0         0s
+
 ==> v1/ConfigMap
-NAME                 DATA  AGE
-tan-warthog-traefik  1     0s
+
+NAME        AGE
+my-traefik  0s
+
+==> v1/ServiceAccount
+my-traefik  0s
+
+==> v1/ClusterRole
+my-traefik  0s
+
+==> v1/ClusterRoleBinding
+my-traefik  0s
 
 ==> v1/Service
-NAME                 TYPE          CLUSTER-IP     EXTERNAL-IP  PORT(S)                     AGE
-tan-warthog-traefik  LoadBalancer  10.101.130.89  <pending>    80:31709/TCP,443:31000/TCP  0s
+my-traefik  0s
 
 ==> v1/Deployment
-NAME                 DESIRED  CURRENT  UP-TO-DATE  AVAILABLE  AGE
-tan-warthog-traefik  1        1        1           0          0s
-
-==> v1/Pod(related)
-NAME                                  READY  STATUS             RESTARTS  AGE
-tan-warthog-traefik-78c8784fc6-4rwst  0/1    ContainerCreating  0         0s
+my-traefik  0s
 ```
 
 ... it automatically assigns a random name (unless you specify `--name`).
 You can use it to update (it's actually *upgrade*) & uninstall stuff.
 
 ```
-$ helm upgrade tan-warthog stable/traefik
-$ helm delete --purge tan-warthog
+$ helm upgrade my-traefik stable/traefik
+$ helm delete --purge my-traefik
 ```
 
 ## Ingress
