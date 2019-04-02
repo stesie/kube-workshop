@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: hello-minikube-vhost
+  name: foo-server-ingress
 spec:
   backend:
     serviceName: foo-server-svc
